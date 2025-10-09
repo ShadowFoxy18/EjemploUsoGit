@@ -19,6 +19,8 @@ public class FuncioneArrays : MonoBehaviour
         Debug.Log("Nota mas alta del segundo trismetre: " + NotaMayor(notasAlumnoSegundoTrimestre));
         Debug.Log("Nota mas baja del primer trismetre: " + NotaBaja(notasAlumnoPrimerTrimestre));
         Debug.Log("Nota mas baja del segundo trismetre: " + NotaBaja(notasAlumnoSegundoTrimestre));
+        Debug.Log("Nota media del primer trimestre: " + NotaMedia(notasAlumnoPrimerTrimestre).ToString("F2"));
+        Debug.Log("Nota media del segundo trimestre: " + NotaMedia(notasAlumnoSegundoTrimestre).ToString("F2"));
     }
 
     /// <summary>
@@ -73,5 +75,21 @@ public class FuncioneArrays : MonoBehaviour
             }
         }
         return notaMasBaja;
+    }
+
+    /// <summary>
+    /// Da la nota media de una Array y lo devuelve en float
+    /// </summary>
+    /// <param name="notasAlumno"></param>
+    /// <returns></returns>
+    float NotaMedia(int[] notasAlumno)
+    {
+        float notaTotal = 0;
+        for (int i = 0; i < notasAlumno.Length; i++)
+        {
+            notaTotal += notasAlumno[i];
+        }
+        float calificacionMedia = (notaTotal) / notasAlumno.Length;
+        return calificacionMedia;
     }
 }
